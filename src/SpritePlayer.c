@@ -187,6 +187,9 @@ void UPDATE(void) {
 		if(tile_coll == 6) {
 			SetPlayerState(StateLanded);
 		} else {
+			if(sprite_turbo) {
+				SpriteManagerRemoveSprite(sprite_turbo);
+			}
 			SetPlayerState(StateDying);
 		}
 	}

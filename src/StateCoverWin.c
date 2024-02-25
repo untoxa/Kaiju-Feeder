@@ -11,7 +11,7 @@ IMPORT_MAP(win);
 extern UINT8 current_level;
 extern UINT8 num_levels;
 
-void START() {
+void START(void) {
 	InitScroll(BANK(win), &win, 0, 0);
 
 	INIT_FONT(font, PRINT_BKG);
@@ -25,7 +25,7 @@ void START() {
 	}
 }
 
-void UPDATE() {
+void UPDATE(void) {
 	if(current_level == num_levels) {
 
 	} else {

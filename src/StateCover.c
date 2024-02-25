@@ -14,7 +14,7 @@ IMPORT_MAP(sgb_border);
 
 extern UINT8 current_level;
 
-void START() {
+void START(void) {
 	LOAD_SGB_BORDER(sgb_border);
 	InitScroll(BANK(cover), &cover, 0, 0);
 
@@ -26,7 +26,7 @@ void START() {
 	current_level = 0;
 }
 
-void UPDATE() {
+void UPDATE(void) {
 	if(keys != 0) {
 		SetState(StateCoverWin);
 	}

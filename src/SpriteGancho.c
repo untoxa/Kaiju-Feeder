@@ -13,7 +13,7 @@ typedef struct {
 	INT16 vy;
 } CUSTOM_DATA;
 
-void START() {
+void START(void) {
 	CUSTOM_DATA* data = (CUSTOM_DATA*)THIS->custom_data;
 	data->y = sprite_chopter->y + 16;
 	data->vy = 1;
@@ -22,7 +22,7 @@ void START() {
 	SpriteManagerAdd(SpriteRope, THIS->x, THIS->y);
 }
 
-void UPDATE() {
+void UPDATE(void) {
 	INT16 new_x;
 	INT16 new_y;
 	UINT8 i;
@@ -80,6 +80,6 @@ void UPDATE() {
 	}
 }
 
-void DESTROY() {
+void DESTROY(void) {
 	sprite_gancho = 0;
 }

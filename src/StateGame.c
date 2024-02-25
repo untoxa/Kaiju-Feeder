@@ -31,7 +31,7 @@ struct MapInfoBanked level_datas[] = {
 };
 UINT8 num_levels = 3;
 
-void START() {
+void START(void) {
 	UINT16 start_x, start_y;
 	struct MapInfoBanked* level = &level_datas[current_level];
 	UINT8 map_w, map_h;
@@ -55,7 +55,7 @@ void START() {
 	}*/
 }
 
-void UPDATE() {
+void UPDATE(void) {
 #ifndef NDEBUG
 	if(KEY_TICKED(J_START)) {
 		current_level ++;

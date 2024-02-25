@@ -3,14 +3,14 @@
 #include "SpriteManager.h"
 #include "Scroll.h"
 
-const UINT8 anim_pollo_dying[] = {6, 1, 2, 3, 4, 5, 5};
+UINT8 anim_pollo_dying[] = {6, 1, 2, 3, 4, 5, 5};
 extern Sprite* sprite_gancho;
 
 typedef struct {
 	INT8 vy;
 } CUSTOM_DATA;
 
-void START() {
+void START(void) {
 	CUSTOM_DATA* data = (CUSTOM_DATA*)THIS->custom_data;
 	UINT8 coll_tile;
 
@@ -26,7 +26,7 @@ void START() {
 	}
 }
 
-void UPDATE() {
+void UPDATE(void) {
 	CUSTOM_DATA* data = (CUSTOM_DATA*)THIS->custom_data;
 	UINT8 tile_coll;
 
@@ -37,11 +37,11 @@ void UPDATE() {
 	} else {
 		if(data->vy) {
 			if(tile_coll = TranslateSprite(THIS, 0, data->vy)) {
-				//SetSpriteAnim(THIS, anim_pollo_dying, 15);
+				SetSpriteAnim(THIS, anim_pollo_dying, 15);
 			}
 		}
 	}
 }
 
-void DESTROY() {
+void DESTROY(void) {
 }

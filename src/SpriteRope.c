@@ -11,13 +11,13 @@ typedef struct {
 	INT8 inc_y;
 } CUSTOM_DATA;
 
-void START() {
+void START(void) {
 	CUSTOM_DATA* data = (CUSTOM_DATA*)THIS->custom_data;
 	sprite_rope = THIS;
 	data->inc_y = 0;
 }
 
-void UPDATE() {
+void UPDATE(void) {
 	UINT16 start_y = sprite_chopter->y + 16;
 	CUSTOM_DATA* data = (CUSTOM_DATA*)THIS->custom_data;
 	THIS->x = sprite_gancho->x - 8;
@@ -32,6 +32,6 @@ void UPDATE() {
 	}
 }
 
-void DESTROY() {
+void DESTROY(void) {
 	sprite_rope = 0;
 }

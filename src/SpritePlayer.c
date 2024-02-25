@@ -8,12 +8,12 @@
 #include "Math.h"
 #include "Scroll.h"
 
-const UINT8 anim_landed[] = {10, 0, 6, 0, 6, 0, 6, 0, 6, 0, 1};
-const UINT8 anim_idle[]   = {2, 4, 5};
-const UINT8 anim_flying[] = {2, 2, 3};
-const UINT8 anim_dying[]  = {6, 8, 9, 10, 11, 12, 12};
-const UINT8 anim_turning[]  = {4, 4, 15, 6, 6};
-const UINT8 anim_win[]      = {1, 7};
+UINT8 anim_landed[] = {10, 0, 6, 0, 6, 0, 6, 0, 6, 0, 1};
+UINT8 anim_idle[]   = {2, 4, 5};
+UINT8 anim_flying[] = {2, 2, 3};
+UINT8 anim_dying[]  = {6, 8, 9, 10, 11, 12, 12};
+UINT8 anim_turning[]  = {4, 4, 15, 6, 6};
+UINT8 anim_win[]      = {1, 7};
 
 typedef enum {
 	StateLanded,
@@ -54,14 +54,14 @@ void SetPlayerState(PlayerState _state) {
 	}
 }
 
-void START() {
+void START(void) {
 	SetPlayerState(StateLanded);
 	sprite_chopter = THIS;
 	chopter_y_dec.w = 0;
 	chopter_x_dec.w = 0;
 }
 
-void UPDATE() {
+void UPDATE(void) {
 	UINT8 tile_coll = 0;
 	INT8 inc_x = 0;
 	INT8 inc_y = 0;
@@ -195,6 +195,6 @@ void UPDATE() {
 	DPrintf("x:%u y:%u  ", THIS->x, THIS->y);
 }
 
-void DESTROY() {
+void DESTROY(void) {
 	sprite_chopter = 0;
 }

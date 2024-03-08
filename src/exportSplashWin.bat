@@ -1,1 +1,0 @@
-..\..\pngb\bin\pngb.exe -mgse -base 0 -name win ..\res\win.png win.c

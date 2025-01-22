@@ -59,11 +59,13 @@ void UPDATE(void) {
 		}
 
 		if(THIS->y < sprite_chopter->y + 16) { //Gancho is on chopter pos
-			SpriteManagerRemoveSprite(sprite_rope);
+			if (sprite_rope) {
+				SpriteManagerRemoveSprite(sprite_rope);
+			}
 			if(THIS->anim_frame == 1) { //Pollo grabbed, keep the gancho
 				data->y = sprite_chopter->y + 16;
 			} else { //No pollo, remove gancho
-				SpriteManagerRemove(THIS_IDX);
+				SpriteManagerRemoveSprite(THIS);
 			}
 		}
 

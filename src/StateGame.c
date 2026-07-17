@@ -34,7 +34,7 @@ UINT8 num_levels = 3;
 void START(void) {
 	UINT16 start_x, start_y;
 	struct MapInfoBanked* level = &level_datas[current_level];
-	UINT8 map_w, map_h;
+	UINT16 map_w, map_h;
 
 	level_done = 0;
 

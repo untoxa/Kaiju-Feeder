@@ -8,12 +8,12 @@
 #include "Math.h"
 #include "Scroll.h"
 
-UINT8 anim_landed[] = {10, 0, 6, 0, 6, 0, 6, 0, 6, 0, 1};
-UINT8 anim_idle[]   = {2, 4, 5};
-UINT8 anim_flying[] = {2, 2, 3};
-UINT8 anim_dying[]  = {6, 8, 9, 10, 11, 12, 12};
-UINT8 anim_turning[]  = {4, 4, 15, 6, 6};
-UINT8 anim_win[]      = {1, 7};
+UINT8 anim_landed[]  = VECTOR(0, 6, 0, 6, 0, 6, 0, 6, 0, 1);
+UINT8 anim_idle[]    = VECTOR(4, 5);
+UINT8 anim_flying[]  = VECTOR(2, 3);
+UINT8 anim_dying[]   = VECTOR(8, 9, 10, 11, 12, 12);
+UINT8 anim_turning[] = VECTOR(4, 15, 6, 6);
+UINT8 anim_win[]     = VECTOR(7);
 
 typedef enum {
 	StateLanded,

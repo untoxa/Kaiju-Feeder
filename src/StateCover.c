@@ -16,7 +16,7 @@ extern UINT8 current_level;
 
 void START(void) {
 	LOAD_SGB_BORDER(sgb_border);
-	InitScroll(BANK(cover), &cover, 0, 0);
+	InitScroll(BANK(cover), &cover, NULL, NULL);
 
 	INIT_FONT(font, PRINT_BKG);
 	PRINT(0, 14, "EMILIO J. DOMINGUEZ");

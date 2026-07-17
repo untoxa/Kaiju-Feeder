@@ -4,7 +4,7 @@
 
 extern Sprite* sprite_chopter;
 extern Sprite* sprite_gancho;
-Sprite* sprite_rope = 0;
+Sprite* sprite_rope = NULL;
 
 
 typedef struct {
@@ -33,5 +33,5 @@ void UPDATE(void) {
 }
 
 void DESTROY(void) {
-	sprite_rope = 0;
+	sprite_rope = NULL;
 }

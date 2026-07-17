@@ -3,7 +3,7 @@
 #include "SpriteManager.h"
 #include "Scroll.h"
 
-UINT8 anim_pollo_dying[] = {6, 1, 2, 3, 4, 5, 5};
+UINT8 anim_pollo_dying[] = VECTOR(1, 2, 3, 4, 5, 5);
 extern Sprite* sprite_gancho;
 
 typedef struct {
@@ -12,18 +12,13 @@ typedef struct {
 
 void START(void) {
 	CUSTOM_DATA* data = (CUSTOM_DATA*)THIS->custom_data;
-	UINT8 coll_tile;
 
 	if(sprite_gancho && sprite_gancho->anim_frame != 0) {
-		SpriteManagerRemove(THIS_IDX);
+		SpriteManagerRemoveSprite(THIS);
 		return;
 	}
 
-	data->vy = 0;
-	coll_tile = GetScrollTile(THIS->x >> 3, (THIS->y + 16) >> 3);
-	if(!scroll_collisions[coll_tile]) {
-		data->vy = 1;
-	}
+	data->vy = (scroll_collisions[GetScrollTile(THIS->x >> 3, (THIS->y + 16) >> 3)] & THIS->coll_group) ? 0 : 1;
 }
 
 void UPDATE(void) {
@@ -32,7 +27,7 @@ void UPDATE(void) {
 
 	if(THIS->anim_data) {
 		if(THIS->anim_frame == 5) {
-			SpriteManagerRemove(THIS_IDX);
+			SpriteManagerRemoveSprite(THIS);
 		}
 	} else {
 		if(data->vy) {
